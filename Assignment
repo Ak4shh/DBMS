@@ -1,0 +1,88 @@
+--2
+
+create table Account_ (
+
+  branch_name varchar(10),
+  account_number   number,
+  balance number
+
+);
+
+create table Branch(
+
+branch_name varchar(20),
+branch_city varchar(20),
+assests number
+
+);
+
+create table Customer(
+
+customer_name varchar(20),
+customer_street varchar(20),
+customer_city varchar(20)
+
+);
+
+--3
+
+alter table Account_ add primary key (account_number);
+alter table Branch add primary key (branch_name);
+alter table Customer add primary key (customer_name);
+
+--4
+
+alter table account_ add pincode varchar(6);
+
+--5
+
+describe account_;
+
+--6
+
+alter table account_ modify pincode number;
+
+--7
+
+describe account_;
+
+
+--8
+
+
+alter table account_ add check (pincode>=625523);
+
+
+--9
+
+alter table account_ drop column pincode;
+
+--10
+
+create table loan(
+
+loan_number number,
+branch_name varchar(20)
+amount number,
+primary key(loan_number)
+
+);
+
+create table depositer(
+
+customer_name varchar(20),
+account_number number
+
+
+
+);
+
+--11
+
+create table borrower(
+
+customer_name varchar(20),
+loan_number number, 
+primary key(loan_number)
+
+);
